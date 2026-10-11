@@ -85,7 +85,7 @@ export default function DSA() {
                   CodeChef
                 </span>
                 <span className="text-white/20 group-hover:text-white/60 transition-colors duration-500 text-5xl md:text-7xl font-extralight tracking-tighter">
-                  1700
+                  1700+
                 </span>
               </div>
               <div className="flex justify-between items-center">
