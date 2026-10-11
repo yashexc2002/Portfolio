@@ -73,7 +73,7 @@ export default function Projects() {
         className="px-6 md:px-12 mb-16"
       >
         <p className="text-xs md:text-sm text-gray-500 tracking-[0.3em] uppercase">
-          Featured Deployments
+          Projects
         </p>
       </motion.div>
 
