@@ -1,48 +1,80 @@
 "use client";
-
-import {motion} from "framer-motion";
+import { motion } from "framer-motion";
 import Image from "next/image";
 
-export default function Home(){
-    return(
-        <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden px-4 py-24">
-            <div
-                aria-hidden="true"
-                className="pointer-events-none absolute left-1/2 top-1/2 h-72 w-72 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/[0.035] blur-3xl sm:h-96 sm:w-96"
-            />
-            <motion.div
-            initial = {{opacity:0,y:30}}
-            animate = {{opacity:1,y:0}}
-            transition={{duration:1,ease:"easeOut"}}
-            className="relative z-10 flex w-full max-w-2xl flex-col items-center text-center"
-            >
-                <motion.div
-                    initial={{ opacity: 0, scale: 0.94 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.9, delay: 0.15, ease: "easeOut" }}
-                    className="mb-9 rounded-full border border-white/15 bg-white/[0.03] p-2 shadow-[0_0_0_8px_rgba(255,255,255,0.02)]"
-                >
-                    <div className="relative h-28 w-28 overflow-hidden rounded-full border border-white/10 bg-white/10 sm:h-36 sm:w-36">
-                        <Image
-                            src="/profile.jpg"
-                            alt="Portrait of Yash Oberoi"
-                            fill
-                            priority
-                            sizes="(max-width: 640px) 112px, 144px"
-                            className="object-cover object-center grayscale transition duration-700 hover:scale-105 hover:grayscale-0"
-                        />
-                    </div>
-                </motion.div>
+export default function Hero() {
+  return (
+    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden px-4 py-24 bg-[#020202]">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute left-1/2 top-1/2 h-[30rem] w-[30rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/[0.02] blur-[120px]"
+      />
 
-                <h1 className="mb-4 text-4xl font-light tracking-widest text-white/90 uppercase md:text-6xl">
-                    Yash Oberoi
-                </h1>
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, ease: "easeOut" }}
+        className="relative z-10 flex w-full flex-col items-center text-center mt-10 md:mt-0"
+      >
+        <div className="relative mb-16 md:mb-20 flex justify-center items-center">
+          
+          <motion.div
+            initial={{ opacity: 0, rotate: -10, scale: 0.9 }}
+            animate={{ opacity: 1, rotate: -4, scale: 1 }}
+            transition={{ duration: 1, delay: 0.1, ease: "easeOut" }}
+            className="absolute w-64 h-[22rem] md:w-80 md:h-[28rem] bg-[#0a0a0a] border border-white/5 shadow-2xl"
+          />
+          
+          <motion.div
+            initial={{ opacity: 0, rotate: 10, scale: 0.9 }}
+            animate={{ opacity: 1, rotate: 3, scale: 1 }}
+            transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
+            className="absolute w-64 h-[22rem] md:w-80 md:h-[28rem] bg-[#0d0d0d] border border-white/5 shadow-2xl"
+          />
+          
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1.2, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+            className="relative w-64 h-[22rem] md:w-80 md:h-[28rem] bg-[#050505] border border-white/10 p-3 md:p-4 shadow-2xl group cursor-pointer"
+          >
+            <div className="absolute top-2 left-3 text-[7px] md:text-[8px] text-white/30 tracking-[0.2em] font-mono">
+              YASH O. // 2026
+            </div>
+            
+            <div className="absolute top-1 right-3 text-[14px] text-white/30 font-light">
+              +
+            </div>
+            
+            <div className="relative w-full h-[18rem] md:h-[23.5rem] mt-4 overflow-hidden bg-[#0a0a0a] border border-white/5">
+              <Image
+                src="/profile.jpg"
+                alt="Yash Oberoi"
+                fill
+                priority
+                sizes="(max-width: 768px) 256px, 320px"
+                className="object-cover object-center grayscale transition-all duration-700 group-hover:scale-105 group-hover:grayscale-0"
+              />
+            </div>
+            
+            <div className="absolute bottom-1 left-3 text-[14px] text-white/30 font-light">
+              +
+            </div>
+            
+            <div className="absolute bottom-2 right-3 text-[6px] md:text-[7px] text-white/20 tracking-[0.2em] text-right font-mono flex flex-col">
+              <span>SYS.ACTIVE_RUN</span>
+              <span>NO. 8459-00</span>
+            </div>
+          </motion.div>
+        </div>
 
-                <p className="text-sm tracking-widest text-gray-400 uppercase md:text-base">
-                    Crafting Scalable Web & AI
-                </p>
-
-             </motion.div>   
-        </section>
-    )
+        <h1 className="mb-4 text-5xl md:text-7xl lg:text-[6rem] font-extralight tracking-tight text-white/90 uppercase">
+          Yash Oberoi
+        </h1>
+        <p className="text-[9px] md:text-xs tracking-[0.4em] text-white/40 uppercase">
+          Crafting Scalable Web & AI
+        </p>
+      </motion.div>
+    </section>
+  );
 }
